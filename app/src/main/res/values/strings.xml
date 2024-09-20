@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">asshittu-MyBookWishlist</string>
+    <string name="read">Read</string>
+    <string name="publication_year_hint">Enter the Book\'s Publication Year</string>
+    <string name="book_genre_hint">Enter the Book Genre</string>
+    <string name="author_name_hint">Enter the Author\'s Name</string>
+    <string name="book_title_hint">Enter Book Title</string>
+    <string name="book_genre">Book Genre</string>
+    <string name="unread_status">unread</string>
 </resources>

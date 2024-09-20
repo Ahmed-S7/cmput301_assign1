@@ -9,7 +9,7 @@ private String genre;
 private int publicationYear;
 private Boolean read;
 
-Book (String title, String authorName, String genre, int publicationYear){
+Book (@NonNull String title, String authorName, String genre, int publicationYear){
     this.title = title;
     this.authorName = authorName;
     this.genre = genre;
