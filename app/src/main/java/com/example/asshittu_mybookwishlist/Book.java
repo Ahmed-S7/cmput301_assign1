@@ -1,15 +1,16 @@
 package com.example.asshittu_mybookwishlist;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public class Book {
 private String title;
 private String authorName;
 private String genre;
-private int publicationYear;
+private String publicationYear;
 private Boolean read;
 
-Book (@NonNull String title, String authorName, String genre, int publicationYear){
+Book ( String title,  String authorName,  String genre, String publicationYear){
     this.title = title;
     this.authorName = authorName;
     this.genre = genre;
@@ -30,7 +31,7 @@ Book (@NonNull String title, String authorName, String genre, int publicationYea
         return genre;
     }
 
-    public int getPublicationYear(){
+    public String getPublicationYear(){
         return publicationYear;
     }
 

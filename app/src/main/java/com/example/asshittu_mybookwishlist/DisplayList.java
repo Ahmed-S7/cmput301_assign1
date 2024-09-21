@@ -1,18 +1,17 @@
+package com.example.asshittu_mybookwishlist;
+
 import android.widget.ArrayAdapter;
 
-import com.example.asshittu_mybookwishlist.Book;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import com.example.asshittu_mybookwishlist.R;
 
 public class DisplayList extends ArrayAdapter<Book> {
     private ArrayList<Book> books;
