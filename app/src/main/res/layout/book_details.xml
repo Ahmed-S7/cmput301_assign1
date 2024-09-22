@@ -10,6 +10,7 @@
         android:id="@+id/book_title_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/book_title_hint"
         android:inputType="textPersonName" />
@@ -18,6 +19,7 @@
         android:id="@+id/author_name_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/author_name_hint"
         android:inputType="textPersonName" />
@@ -26,6 +28,7 @@
         android:id="@+id/genre_name_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/book_genre_hint"
         android:inputType="textPersonName" />
