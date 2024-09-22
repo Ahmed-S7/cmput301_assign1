@@ -89,7 +89,7 @@
             android:paddingLeft="30dp"
             android:text="Title:"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/author_name_heading"
@@ -98,7 +98,7 @@
             android:paddingLeft="20dp"
             android:text="Author Name:"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/genre_name_heading"
@@ -107,7 +107,7 @@
             android:paddingLeft="20dp"
             android:text="Genre:"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
 
         <TextView
 
@@ -117,7 +117,7 @@
             android:paddingLeft="20dp"
             android:text="Read Status:"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="17sp" />
     </LinearLayout>
 
 
