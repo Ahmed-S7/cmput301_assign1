@@ -13,6 +13,9 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
+import java.util.Calendar;
+
+
 public class AddOrEditBookDetailsFragment extends DialogFragment {
     private EditText bookTitle;
     private EditText authorName;
@@ -50,7 +53,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
         void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus);//additionally adds the index of the selected book so that it can be edited
 
         //to be implemented for deletions
-        void OnDeletePressed(int selectedBook);
+        void onDeletePressed(int selectedBook);
 
     }
     @Override
@@ -118,7 +121,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                                 !authorName.getText().toString().isEmpty() &&
                                 !genre.getText().toString().isEmpty() &&
                                 !publicationYear.getText().toString().isEmpty()) {
-                            listener.OnDeletePressed(selectedBook);
+                            listener.onDeletePressed(selectedBook);
                         } else {
                             Toast.makeText(getContext(), "Cannot delete. Fields are empty.", Toast.LENGTH_SHORT).show();
                         }
@@ -130,7 +133,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
 
 
-
+                        Calendar cal = Calendar.getInstance();
                         title = bookTitle.getText().toString();
                         author = authorName.getText().toString();
                         genreName = genre.getText().toString();
@@ -187,7 +190,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
                         }else{
                                     validAuthor = true;
-                                }
+                        }
 
 
 
@@ -195,7 +198,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         if ((!publication_Year.isEmpty()) && !publication_Year.matches("\\d{4}")) {
 
                                     Toast pubYearTooLong = new Toast(getContext());
-                                    pubYearTooLong.setText("Could not add book, publication year must be a 4 digit integer");
+                                    pubYearTooLong.setText("Could not add book, publication year must be a positive 4 digit year");
                                     pubYearTooLong.setDuration(Toast.LENGTH_SHORT);
                                     pubYearTooLong.show();
 
@@ -211,6 +214,15 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
                                 publicationYear.setText("");
 
+
+                        } else if((publication_Year.matches("\\d{4}")) && ((Integer.parseInt(publication_Year) > cal.get(Calendar.YEAR)))){
+
+                            Toast pubYearInFuture = new Toast(getContext());
+                            pubYearInFuture.setText("Could not add book, publication year field cannot be later than the current year");
+                            pubYearInFuture.setDuration(Toast.LENGTH_SHORT);
+                            pubYearInFuture.show();
+
+                            publicationYear.setText("");
 
                         } else {
                                     validPubYear = true;

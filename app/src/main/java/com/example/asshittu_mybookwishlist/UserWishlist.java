@@ -2,14 +2,14 @@ package com.example.asshittu_mybookwishlist;
 
 import java.util.ArrayList;
 
-public class Wishlist{
+public class UserWishlist {
 
     private ArrayList<Book> books;
     //represents the number of books inside of the wishlist
     private int bookCount;
     private int numReadBooks;
 
-    Wishlist( ArrayList<Book> bookArray){
+    UserWishlist(ArrayList<Book> bookArray){
         this.books = bookArray;
         this.bookCount = books.size();
     }

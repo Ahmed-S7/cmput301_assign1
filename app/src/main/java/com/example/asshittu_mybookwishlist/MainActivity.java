@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
     private ListView bookListView;
     private ArrayAdapter<Book> bookArrayAdapter;
-    private Wishlist myWishList;
+    private UserWishlist myWishList;
     private ArrayList<Book> myBooks;
     private TextView bookCount;
     private TextView readCount;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
         bookListView = findViewById(R.id.book_list);
         myBooks = new ArrayList<>();
-        myWishList = new Wishlist(myBooks);
+        myWishList = new UserWishlist(myBooks);
         myBooks = myWishList.getBooks();
         bookArrayAdapter = new DisplayList(this, myBooks);
         bookListView.setAdapter(bookArrayAdapter);
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     }
 
     @Override
-    public void OnDeletePressed(int selectedBook) {
+    public void onDeletePressed(int selectedBook) {
 
         Book bookToRemove = myWishList.getBooks().get(selectedBook);
 
