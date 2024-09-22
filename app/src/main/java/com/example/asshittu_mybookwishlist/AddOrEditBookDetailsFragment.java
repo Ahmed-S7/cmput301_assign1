@@ -154,7 +154,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
                         } else if (title.strip().equals("")) {
                             Toast titleEmpty = new Toast(getContext());
-                            titleEmpty.setText("Could not add book, book title must be under 50 characters");
+                            titleEmpty.setText("Could not add book, book title field cannot be empty");
                             titleEmpty.setDuration(Toast.LENGTH_SHORT);
                             titleEmpty.show();
 
@@ -179,7 +179,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         } else if (author.isEmpty()){
 
                                     Toast authorEmpty = new Toast(getContext());
-                                    authorEmpty.setText("Could not add book, author name must be entered");
+                                    authorEmpty.setText("Could not add book, author name field cannot be empty");
                                     authorEmpty.setDuration(Toast.LENGTH_SHORT);
                                     authorEmpty.show();
 
@@ -206,7 +206,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         } else if ((publication_Year.isEmpty())){
 
                                 Toast pubYearEmpty = new Toast(getContext());
-                                pubYearEmpty.setText("Could not add book, publication year must entered");
+                                pubYearEmpty.setText("Could not add book, publication year field cannot be empty");
                                 pubYearEmpty.setDuration(Toast.LENGTH_SHORT);
                                 pubYearEmpty.show();
 
@@ -220,7 +220,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         if ((genreName.isEmpty())){
 
                                     Toast genreNameEmpty = new Toast(getContext());
-                                    genreNameEmpty.setText("Could not add book, genre name must entered");
+                                    genreNameEmpty.setText("Could not add book, genre name field cannot be empty");
                                     genreNameEmpty.setDuration(Toast.LENGTH_SHORT);
                                     genreNameEmpty.show();
 
