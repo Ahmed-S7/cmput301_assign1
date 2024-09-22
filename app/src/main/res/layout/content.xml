@@ -58,13 +58,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:padding="10dp"
         android:focusable="false"
+        android:layoutDirection="rtl"
+        android:padding="5dp"
         android:text="@string/readStatus"
+        android:layout_marginStart="-8dp"
         android:textColor="#090000"
         android:textColorLink="#040000"
-        android:textSize="15sp"
-        android:layoutDirection="rtl">
+        android:textSize="15sp">
 
     </CheckBox>
 

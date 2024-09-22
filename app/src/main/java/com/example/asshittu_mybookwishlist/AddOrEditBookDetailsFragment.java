@@ -137,8 +137,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         publication_Year = publicationYear.getText().toString();
                         readStatusForEditing = readStatus.isChecked();
 
-                        //handles the ok press for cases of editing or deleting a book
-
+                        //handles the ok press for cases of adding or editing a book
 
                         //TODO: validate all 4 entries during the next step, **remember to keep read status as false for the newly added entries**
                         if (title.length() > 50) {
