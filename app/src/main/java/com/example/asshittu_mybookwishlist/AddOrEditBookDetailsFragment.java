@@ -167,7 +167,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
 
 
-                        if (author.length() > 50) {
+                        if (author.length() > 30) {
 
                                     Toast authorTooLong = new Toast(getContext());
                                     authorTooLong.setText("Could not add book, author name must be under 30 characters");
