@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.OnFragmentInteractionListener {
 
     private ListView bookListView;
-    private ArrayList<Book> bookList;
     private ArrayAdapter<Book> bookArrayAdapter;
     private Wishlist myWishList;
     private ArrayList<Book> myBooks;
@@ -34,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
         setContentView(R.layout.activity_main);
 
         bookListView = findViewById(R.id.book_list);
-        bookList = new ArrayList<>();
-        myWishList = new Wishlist(bookList);
+        myBooks = new ArrayList<>();
+        myWishList = new Wishlist(myBooks);
         myBooks = myWishList.getBooks();
         bookArrayAdapter = new DisplayList(this, myBooks);
         bookListView.setAdapter(bookArrayAdapter);
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
         Book bookToRemove = myWishList.getBooks().get(selectedBook);
 
-        if (selectedBook >= 0 && selectedBook < bookList.size()) {
+        if (selectedBook >= 0 && selectedBook < myBooks.size()) {
             Toast confirm = new Toast(this);
             confirm.setText("Book: '" + bookToRemove.getTitle() + "' deleted");
             confirm.setDuration(Toast.LENGTH_SHORT);
