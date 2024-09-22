@@ -1,20 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:text=""
-    android:padding="20dp"
-    android:textSize="40sp">
-
+    android:padding="25dp"
+    android:textSize="40sp"
+    android:descendantFocusability="blocksDescendants">
 
     <TextView
         android:id="@+id/book_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="7dp"
         android:text="Book Title"
-        android:textSize="15sp">
+        android:textColor="#050000"
+        android:padding="10dp"
+        android:textColorLink="#0D0000"
+        android:textSize="15sp"
+        android:maxWidth="75dp"
+        android:maxLines="2"
+        android:ellipsize="end">
 
     </TextView>
 
@@ -22,29 +27,45 @@
         android:id="@+id/author_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:text="Author Name"
-        android:padding="7dp"
-        android:textSize="15sp">
+        android:textColor="#040000"
+        android:textColorLink="#070000"
+        android:textSize="15sp"
+        android:maxWidth="75dp"
+        android:maxLines="2"
+        android:ellipsize="end">
 
     </TextView>
+
     <TextView
         android:id="@+id/genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:text="@string/book_genre"
-        android:padding="7dp"
-        android:textSize="15sp">
+        android:textColor="#000000"
+        android:textColorLink="#070000"
+        android:textSize="15sp"
+        android:maxWidth="75dp"
+        android:maxLines="1"
+        android:ellipsize="end">
+
     </TextView>
 
-    <TextView
+    <CheckBox
         android:id="@+id/read_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Read Status"
-        android:padding="7dp"
+        android:clickable="false"
+        android:padding="5dp"
+        android:focusable="false"
+        android:text="@string/readStatus"
+        android:textColor="#090000"
+        android:textColorLink="#040000"
         android:textSize="15sp">
 
-    </TextView>
+    </CheckBox>
 
 
 </LinearLayout>

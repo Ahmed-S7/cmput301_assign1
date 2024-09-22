@@ -7,4 +7,7 @@
     <string name="book_title_hint">Enter Book Title</string>
     <string name="book_genre">Book Genre</string>
     <string name="unread_status">unread</string>
+    <string name="readStatus">Read</string>
+    <string name="read_books">Read Books:</string>
+    <string name="book_count_title">Book Count:</string>
 </resources>

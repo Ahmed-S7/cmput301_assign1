@@ -5,6 +5,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,106 +14,160 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public abstract class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.OnFragmentInteractionListener {
 
-    //This is the listview for all of the books inside of the wishlist
-    ListView bookListView;
-
-    //This will function as the array adapter for all of the books inside of the wishlist, will communicate with the application to represent the list
-    ArrayList<Book> bookList;
-
-    //This is the array adapter for the list of books inside of the wishlist
-    ArrayAdapter<Book> bookArrayAdapter;
-
-    Wishlist wishlist;
-
-
-
-    //TODO: Initialize the array of the wishlist;
-    //TODO: design a custom list to represent the wishlist entries
-    // - the custom list should have 5 fields for each of the required elements of a book
-    // - implement logic for input validation when the user attempts to edit or add a new field
-
+    private ListView bookListView;
+    private ArrayList<Book> bookList;
+    private ArrayAdapter<Book> bookArrayAdapter;
+    private Wishlist myWishList;
+    private ArrayList<Book> myBooks;
+    private TextView bookCount;
+    private TextView readCount;
+    int numBooks;
+    int numReadBooks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bookListView = findViewById(R.id.city_list);
 
+
+
+
+        bookListView = findViewById(R.id.book_list);
         bookList = new ArrayList<>();
-
-        Book HarryPotterBook = new Book("Harry Potter And The Philosopher's Stone","JK Rowling", "Fantasy", "1997");
-
-        //TESTING
-        bookArrayAdapter.add((HarryPotterBook));
-
-        //operations from here on out will be carried out by editing values inside the wishlist's bookArray
-        wishlist = new Wishlist(bookList);
-
-        bookArrayAdapter = new DisplayList(this, wishlist.getBooks());
-
+        myWishList = new Wishlist(bookList);
+        myBooks = myWishList.getBooks();
+        bookArrayAdapter = new DisplayList(this, myBooks);
         bookListView.setAdapter(bookArrayAdapter);
 
-        final FloatingActionButton addBookButton = findViewById(R.id.add_book_button);
+        bookCount = findViewById(R.id.book_count);
+        readCount = findViewById(R.id.read_count);
 
+        //TEST DATA
+        /*
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", "1925");
+        book1.setRead(true);
+
+
+        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction", "1960");
+        book2.setRead(false);
+
+        Book book3 = new Book("1984", "George Orwell", "Dystopian", "1949");
+        book3.setRead(true);
+
+        Book book4 = new Book("The Search", "Gene Luen Yang", "Graphic Novel", "2013");
+        book4.setRead(true);
+        Book book5 = new Book("The Rift", "Gene Luen Yang", "Graphic Novel", "2014");
+        book5.setRead(true);
+
+        Book book6 = new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Fantasy", "1997");
+        book6.setRead(true);
+
+        Book book7 = new Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling", "Fantasy", "1998");
+        book3.setRead(true);
+
+        Book book8 = new Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", "Fantasy", "1999");
+
+
+        Book book9 = new Book("Harry Potter and the Goblet of Fire", "J.K. Rowling", "Fantasy", "2000");
+        book3.setRead(true);
+
+        Book book10 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", "Fantasy", "2003");
+
+        myWishList.addBook(book1);
+        myWishList.addBook(book2);
+        myWishList.addBook(book3);
+        myWishList.addBook(book4);
+        myWishList.addBook(book5);
+        myWishList.addBook(book6);
+        myWishList.addBook(book7);
+        myWishList.addBook(book8);
+        myWishList.addBook(book9);
+        myWishList.addBook(book10);
+        */
+
+        readCount.setText(String.valueOf(myWishList.getNumReadBooks()));
+        bookCount.setText(String.valueOf(myWishList.getBookCount()));
+
+
+        FloatingActionButton addBookButton = findViewById(R.id.add_book_button);
+        addBookButton.setOnClickListener((v) -> {
+            new AddOrEditBookDetailsFragment().show(getSupportFragmentManager(), "ADD/EDIT_CITY");
+        });
 
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View book, int bookPosition, long l) {
-               Bundle bookInfo = new Bundle();
-
-               Book chosenBook = (Book) adapterView.getItemAtPosition(bookPosition);
-
-               bookInfo.putInt("book_index", bookPosition);
-
-               bookInfo.putString("book_title", chosenBook.getTitle());
-
-               bookInfo.putString("book_genre", chosenBook.getGenre());
-
-               bookInfo.putString("publication_year", chosenBook.getPublicationYear());
-
-               bookInfo.putBoolean("read_status", chosenBook.getRead());
-
-               AddOrEditBookDetailsFragment AddOrEditBook = new AddOrEditBookDetailsFragment();
-
-               AddOrEditBook.setArguments(bookInfo);
-
-               AddOrEditBook.show(getSupportFragmentManager(),"ADD/EDIT/DELETE BOOK");
-
+                Bundle bookInfo = new Bundle();
+                Book chosenBook = (Book) adapterView.getItemAtPosition(bookPosition);
+                bookInfo.putInt("book_index", bookPosition);//indexes the book
+                bookInfo.putString("book_title", chosenBook.getTitle());//stores the book title
+                bookInfo.putString("book_author", chosenBook.getAuthorName());//stores the author
+                bookInfo.putString("book_genre", chosenBook.getGenre());//stores genre
+                bookInfo.putString("publication_year", chosenBook.getPublicationYear());//stores publication year
+                bookInfo.putBoolean("read_status", chosenBook.isRead());//stores the read status
+                AddOrEditBookDetailsFragment AddOrEditBook = new AddOrEditBookDetailsFragment();
+                AddOrEditBook.setArguments(bookInfo);
+                AddOrEditBook.show(getSupportFragmentManager(), "ADD/EDIT/DELETE BOOK");
             }
         });
-
-        addBookButton.setOnClickListener((view) -> {
-            new AddOrEditBookDetailsFragment().show(getSupportFragmentManager(),"ADD/EDIT/DELETE BOOK");
-        });
-
     }
-    //invoked method for whenever the AddCity button it clicked
+
     @Override
-    public void onOkPressed(Book newBook){
-        //Adds non-empty strings into the list view (if at least on field is non-empty, otherwise nothing will be added to the list
-        if(!((newBook.getTitle().strip().equals("") && newBook.getAuthorName().strip().equals("")))){
-           wishlist.addBook(newBook);
-            bookArrayAdapter.add(newBook);
+    public void onOkPressed(Book newBook, boolean readStatus) {
+        if (!newBook.getTitle().strip().isEmpty() && !newBook.getAuthorName().strip().isEmpty()) {
+            //add the book
+            myWishList.addBook(newBook);
+            //update the book count
+            numBooks = myWishList.getBookCount();
+            //updates the text view for the book count
+            bookCount.setText(numBooks);
+            int bookPos = myWishList.getBooks().indexOf(newBook);
+            //updates the read status of the new book (it will be false because this is a new book)
+            myWishList.getBooks().get(bookPos).setRead(readStatus);
+
             bookArrayAdapter.notifyDataSetChanged();
+
         }
     }
 
-    //invoked method for whenever a city on the list gets clicked
     @Override
-    public void onOkPressed2(Book newBook, int selectedBook){
+    public void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus) {
 
-        //remove the city being edited
-        //this also serves the additional functionality of deleting any cities that are left empty while editing them after clicking "ok"
 
-        Book book_to_delete = bookArrayAdapter.getItem(selectedBook);
-        bookArrayAdapter.remove(book_to_delete);
-        bookArrayAdapter.notifyDataSetChanged();//fixed by copilot: 2024-09-20
+            //finds the current book, replaces its info with that of the new book
+            myWishList.getBooks().set(selectedBook, newBook);
+            //Adjusts the read status of the book
+            myWishList.getBookAtPostion(selectedBook).setRead(readStatus);
+            //Adjusts the count of read books
+            numReadBooks = myWishList.getNumReadBooks();
+            //updates the textview for the read count
+            readCount.setText(String.valueOf(numReadBooks));
 
-        //inserts the city and province entered by the user in its place
-        if(!((newBook.getTitle().strip().equals("") && newBook.getAuthorName().strip().equals("")))){
-            bookArrayAdapter.insert(newBook,selectedBook);
+
+            bookArrayAdapter.notifyDataSetChanged();
+
+    }
+
+    @Override
+    public void OnDeletePressed(int selectedBook) {
+
+        Book bookToRemove = myWishList.getBooks().get(selectedBook);
+
+        if (selectedBook >= 0 && selectedBook < bookList.size()) {
+            Toast confirm = new Toast(this);
+            confirm.setText("Book: '" + bookToRemove.getTitle() + "' deleted");
+            confirm.setDuration(Toast.LENGTH_SHORT);
+            confirm.show();
+
+            //deletes the book
+            myWishList.removeBook(bookToRemove);
+            //updates the book count
+            bookCount.setText(String.valueOf(myWishList.getBookCount()));
+            //updates the read count
+            readCount.setText(String.valueOf(myWishList.getNumReadBooks()));
+            bookArrayAdapter.notifyDataSetChanged();
         }
 
 

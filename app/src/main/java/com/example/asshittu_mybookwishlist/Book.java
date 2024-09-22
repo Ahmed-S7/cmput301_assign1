@@ -1,7 +1,6 @@
 package com.example.asshittu_mybookwishlist;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 public class Book {
 private String title;
@@ -10,12 +9,12 @@ private String genre;
 private String publicationYear;
 private Boolean read;
 
-Book ( String title,  String authorName,  String genre, String publicationYear){
+Book (@NonNull String title,  @NonNull String authorName,  String genre, @NonNull String publicationYear){
     this.title = title;
     this.authorName = authorName;
     this.genre = genre;
     this.publicationYear = publicationYear;
-    read = false;
+    this.read = false;
 }
 
     //Getters for all fields of a given book
@@ -35,7 +34,7 @@ Book ( String title,  String authorName,  String genre, String publicationYear){
         return publicationYear;
     }
 
-    public Boolean getRead(){
+    public Boolean isRead(){
         return read;
     }
 
@@ -52,11 +51,11 @@ Book ( String title,  String authorName,  String genre, String publicationYear){
         this.genre = genre;
     }
 
-    public void setPublicationYear(int publicationYear) {
+    public void setPublicationYear(String publicationYear) {
         this.publicationYear = publicationYear;
     }
 
-    public void setRead(Boolean read){
-        this.read = read;
+    public void setRead(Boolean Read){
+        read = Read;
     }
 }

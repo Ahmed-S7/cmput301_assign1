@@ -6,6 +6,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,15 +40,14 @@ public class DisplayList extends ArrayAdapter<Book> {
         TextView bookTitle = view.findViewById(R.id.book_title);
         TextView authorName = view.findViewById(R.id.author_name);
         TextView genre = view.findViewById(R.id.genre);
-        TextView readStatus = view.findViewById(R.id.read_status);
+        CheckBox readStatus = view.findViewById(R.id.read_status);
+
 
         bookTitle.setText(book.getTitle());
         authorName.setText(book.getAuthorName());
         genre.setText(book.getGenre());
+        readStatus.setChecked(book.isRead());
 
-        if(!book.getRead()){
-            readStatus.setText(R.string.unread_status);
-        }
         return view;
     }
 }
