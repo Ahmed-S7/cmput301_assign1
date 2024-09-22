@@ -19,7 +19,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     private EditText genre;
     private EditText publicationYear;
     private CheckBox readStatus;
-    private OnFragmentInteractionListener listener;
+    private FragmentButtonsListener listener;
     //for editing and deleting books
     private String bookTitleForBookEditing;
     private String genreForBookEditing;
@@ -41,7 +41,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
     //Interface used for all of the different interactions with the fragment's buttons
     //the bottom two methods include an integer that is used for the index because they are implemented for use upon clicking of the listView
-    public interface OnFragmentInteractionListener {
+    public interface FragmentButtonsListener {
 
         //to be implemented for adding new books
         void onOkPressed(Book book,boolean readStatus);
@@ -56,8 +56,8 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener){
-            listener = (OnFragmentInteractionListener) context;
+        if (context instanceof FragmentButtonsListener){
+            listener = (FragmentButtonsListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + "must implement OnFragmentInteractionListener");

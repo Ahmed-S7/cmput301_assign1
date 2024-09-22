@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.FragmentButtonsListener {
 
     private ListView bookListView;
     private ArrayAdapter<Book> bookArrayAdapter;
