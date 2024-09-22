@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     int numBooks;
     int numReadBooks;
 
+
+    //Holds all of the operations for the intial creation of the the app on startup
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,51 +43,12 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
         bookArrayAdapter = new DisplayList(this, myBooks);
         bookListView.setAdapter(bookArrayAdapter);
 
+
+        //TEXTVIEWS TO HOLD THE NUMBER OF INDIVIDUAL BOOKS AS WELL AS READ BOOKS
         bookCount = findViewById(R.id.book_count);
         readCount = findViewById(R.id.read_count);
 
-        //TEST DATA
-        /*
-        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald", "Fiction", "1925");
-        book1.setRead(true);
 
-
-        Book book2 = new Book("To Kill a Mockingbird", "Harper Lee", "Fiction", "1960");
-        book2.setRead(false);
-
-        Book book3 = new Book("1984", "George Orwell", "Dystopian", "1949");
-        book3.setRead(true);
-
-        Book book4 = new Book("The Search", "Gene Luen Yang", "Graphic Novel", "2013");
-        book4.setRead(true);
-        Book book5 = new Book("The Rift", "Gene Luen Yang", "Graphic Novel", "2014");
-        book5.setRead(true);
-
-        Book book6 = new Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Fantasy", "1997");
-        book6.setRead(true);
-
-        Book book7 = new Book("Harry Potter and the Chamber of Secrets", "J.K. Rowling", "Fantasy", "1998");
-        book3.setRead(true);
-
-        Book book8 = new Book("Harry Potter and the Prisoner of Azkaban", "J.K. Rowling", "Fantasy", "1999");
-
-
-        Book book9 = new Book("Harry Potter and the Goblet of Fire", "J.K. Rowling", "Fantasy", "2000");
-        book3.setRead(true);
-
-        Book book10 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", "Fantasy", "2003");
-
-        myWishList.addBook(book1);
-        myWishList.addBook(book2);
-        myWishList.addBook(book3);
-        myWishList.addBook(book4);
-        myWishList.addBook(book5);
-        myWishList.addBook(book6);
-        myWishList.addBook(book7);
-        myWishList.addBook(book8);
-        myWishList.addBook(book9);
-        myWishList.addBook(book10);
-        */
 
         readCount.setText(String.valueOf(myWishList.getNumReadBooks()));
         bookCount.setText(String.valueOf(myWishList.getBookCount()));
@@ -122,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             //update the book count
             numBooks = myWishList.getBookCount();
             //updates the text view for the book count
-            bookCount.setText(numBooks);
+            bookCount.setText(String.valueOf(numBooks));
             int bookPos = myWishList.getBooks().indexOf(newBook);
             //updates the read status of the new book (it will be false because this is a new book)
             myWishList.getBooks().get(bookPos).setRead(readStatus);

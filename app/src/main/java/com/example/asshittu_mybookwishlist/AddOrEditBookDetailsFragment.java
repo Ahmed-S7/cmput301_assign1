@@ -21,7 +21,6 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     private CheckBox readStatus;
     private OnFragmentInteractionListener listener;
     //for editing and deleting books
-    private Integer publication_year_for_book_editing;
     private String bookTitleForBookEditing;
     private String genreForBookEditing;
     private String authorNameForEditing;
@@ -40,7 +39,8 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     private Boolean editing = false;
 
 
-
+    //Interface used for all of the different interactions with the fragment's buttons
+    //the bottom two methods include an integer that is used for the index because they are implemented for use upon clicking of the listView
     public interface OnFragmentInteractionListener {
 
         //to be implemented for adding new books
@@ -242,7 +242,6 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                                 //ok button that is invoked for new book additions
                                 listener.onOkPressed(new Book(title, author, genreName, publication_Year), false);
                         }
-
 
                         }
 
