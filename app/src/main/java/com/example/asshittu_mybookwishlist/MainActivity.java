@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     private ArrayList<Book> myBooks;
     private TextView bookCount;
     private TextView readCount;
-    int numBooks;
-    int numReadBooks;
+    private int numBooks;
+    private int numReadBooks;
 
 
     //Holds all of the operations for the intial creation of the the app on startup
@@ -32,9 +32,6 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
         bookListView = findViewById(R.id.book_list);
         bookList = new ArrayList<>();
@@ -89,7 +86,11 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             int bookPos = myWishList.getBooks().indexOf(newBook);
             //updates the read status of the new book (it will be false because this is a new book)
             myWishList.getBooks().get(bookPos).setRead(readStatus);
-
+            //gets the number of read books
+            numReadBooks = myWishList.getNumReadBooks();
+            //updates the textview for the read count
+            readCount.setText(String.valueOf(numReadBooks));
+            //updates the array adapter of the changes in the ArrayList
             bookArrayAdapter.notifyDataSetChanged();
 
         }

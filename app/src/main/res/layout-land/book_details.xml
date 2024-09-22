@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5792C1"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/book_title_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/book_title_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/author_name_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/author_name_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/genre_name_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/book_genre_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/publication_Year_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/publication_year_hint"
+        android:inputType="textPersonName" />
+
+    <CheckBox
+        android:id="@+id/read_status_checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/read" />
+
+</LinearLayout>

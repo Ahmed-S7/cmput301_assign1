@@ -240,7 +240,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
                             }else {
                                 //ok button that is invoked for new book additions
-                                listener.onOkPressed(new Book(title, author, genreName, publication_Year), false);
+                                listener.onOkPressed(new Book(title, author, genreName, publication_Year), readStatusForEditing);
                         }
 
                         }
