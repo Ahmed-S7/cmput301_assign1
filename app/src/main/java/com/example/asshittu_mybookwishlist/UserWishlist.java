@@ -22,7 +22,7 @@ public class UserWishlist {
         this.books = books;
     }
 
-    public Book getBookAtPostion(int position){
+    public Book getBookAtPosition(int position){
 
         return books.get(position);
     }

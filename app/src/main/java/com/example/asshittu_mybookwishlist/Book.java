@@ -8,6 +8,7 @@ private String authorName;
 private String genre;
 private String publicationYear;
 private Boolean read;
+//Class is responsible for attributes and functionalities pertaining to the book class
 
 Book (@NonNull String title,  @NonNull String authorName,  String genre, @NonNull String publicationYear){
     this.title = title;

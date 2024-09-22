@@ -100,9 +100,16 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
 
             //finds the current book, replaces its info with that of the new book
-            myWishList.getBooks().set(selectedBook, newBook);
-            //Adjusts the read status of the book
-            myWishList.getBookAtPostion(selectedBook).setRead(readStatus);
+            Book currentBook = myWishList.getBookAtPosition(selectedBook);
+            //Adjusts the fields of the book
+            currentBook.setTitle(newBook.getTitle());
+            currentBook.setRead(readStatus);
+            currentBook.setAuthorName(newBook.getAuthorName());
+            currentBook.setGenre(newBook.getGenre());
+            currentBook.setPublicationYear(newBook.getPublicationYear());
+
+            newBook = null;//to clear the newBook storage
+
             //Adjusts the count of read books
             numReadBooks = myWishList.getNumReadBooks();
             //updates the textview for the read count

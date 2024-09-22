@@ -32,6 +32,7 @@ public class DisplayList extends ArrayAdapter<Book> {
         View view = convertView;
 
         if (view == null) {
+            //Content.xml spacing was adjusted using copilot:"how do I make al of these text fields evenly spaced?"https://www.bing.com/chat?q=github&sendquery=1&FORM=SCCODX - 2024-22-09
             view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 

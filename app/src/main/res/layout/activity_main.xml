@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:orientation="horizontal"
-        android:padding="8dp">
+        android:padding="10dp">
 
 
         <TextView
@@ -71,14 +71,59 @@
             android:textColor="@color/black"
             android:textSize="20sp" />
 
+
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="86dp">
+        <TextView
+            android:id="@+id/book_title_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:text="Title:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/author_name_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Author Name:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/genre_name_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Genre:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+
+            android:id="@+id/read_status_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:text="Read Status:"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </LinearLayout>
+
 
     <ListView
         android:id="@+id/book_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="120dp"
         android:background="#75B1AB">
 
     </ListView>
