@@ -86,7 +86,7 @@
             android:id="@+id/book_title_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
+            android:paddingLeft="20dp"
             android:text="Title:"
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -95,7 +95,7 @@
             android:id="@+id/author_name_heading"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingLeft="20dp"
+            android:paddingLeft="25dp"
             android:text="Author Name:"
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -114,8 +114,9 @@
             android:id="@+id/read_status_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="Read Status:"
+            android:paddingLeft="35dp"
+            android:paddingRight="7dp"
+            android:text="Read:"
             android:textColor="@color/black"
             android:textSize="17sp" />
     </LinearLayout>
