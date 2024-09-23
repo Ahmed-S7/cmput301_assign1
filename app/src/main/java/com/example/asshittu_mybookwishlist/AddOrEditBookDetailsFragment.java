@@ -32,7 +32,6 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     //flags
     private boolean validTitle = false;
     private boolean validAuthor = false;
-    private boolean validGenre = false;
     private boolean validPubYear = false;
     //for adding books
     private String title;
@@ -226,25 +225,12 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
                         } else {
                                     validPubYear = true;
-                                }
+                        }
 
-                        if ((genreName.isEmpty())){
-
-                                    Toast genreNameEmpty = new Toast(getContext());
-                                    genreNameEmpty.setText("Could not add book, genre name field cannot be empty");
-                                    genreNameEmpty.setDuration(Toast.LENGTH_SHORT);
-                                    genreNameEmpty.show();
-
-                                    genre.setText("");
-
-
-                        }else{
-                                validGenre = true;
-                                }
 
 
                         //ok button press which takes places after all validation is complete
-                        if (validTitle && validAuthor && validPubYear && validGenre) {
+                        if (validTitle && validAuthor && validPubYear) {
                             if (editing) {
                                 //ok button that is invoked for editing a book's details
                                 listener.onOkPressed2((new Book(title, author, genreName, publication_Year)), selectedBook, readStatusForEditing);

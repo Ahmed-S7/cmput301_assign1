@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     private int numReadBooks;
 
 
-    //Holds all of the operations for the intial creation of the the app on startup
+    //Holds all of the operations for the initial creation of the the app on startup
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
