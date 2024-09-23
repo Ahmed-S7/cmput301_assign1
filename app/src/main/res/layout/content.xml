@@ -52,13 +52,14 @@
         android:id="@+id/read_status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="#B87575"
         android:clickable="false"
-        android:padding="5dp"
         android:focusable="false"
+        android:layoutDirection="rtl"
+        android:padding="5dp"
         android:textColor="#090000"
         android:textColorLink="#040000"
-        android:textSize="15sp"
-        android:layout_weight="1"
-        android:layoutDirection="rtl"/>
+        android:textSize="15sp" />
 
 </LinearLayout>

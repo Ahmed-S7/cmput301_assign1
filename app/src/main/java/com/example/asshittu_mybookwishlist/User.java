@@ -9,9 +9,5 @@ public class User {
     public UserWishlist getBookWishList() {
         return bookWishList;
     }
-
-    public void setBookWishList(UserWishlist bookWishList) {
-        this.bookWishList = bookWishList;
-    }
 }
 

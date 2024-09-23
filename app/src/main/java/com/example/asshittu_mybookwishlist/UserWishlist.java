@@ -27,6 +27,7 @@ public class UserWishlist {
         return books.get(position);
     }
 
+
     public int getBookPosition(Book book){
         return this.books.indexOf(book);
     }

@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
     @Override
     public void onOkPressed(Book newBook, boolean readStatus) {
-        if (!newBook.getTitle().strip().isEmpty() && !newBook.getAuthorName().strip().isEmpty()) {
+
             //add the book
             newUser.getBookWishList().addBook(newBook);
             //update the book count
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             //updates the array adapter of the changes in the ArrayList
             bookArrayAdapter.notifyDataSetChanged();
 
-        }
     }
 
     @Override
