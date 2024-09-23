@@ -198,7 +198,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         if ((!publication_Year.isEmpty()) && !publication_Year.matches("\\d{4}")) {
 
                                     Toast pubYearTooLong = new Toast(getContext());
-                                    pubYearTooLong.setText("Could not add book, publication year must be a positive 4 digit year");
+                                    pubYearTooLong.setText("Could not add book, please enter a valid year");
                                     pubYearTooLong.setDuration(Toast.LENGTH_SHORT);
                                     pubYearTooLong.show();
 
