@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+
+//Inherits from the book array adapter to create a customized view of the book element
 public class DisplayList extends ArrayAdapter<Book> {
     private ArrayList<Book> books;
     private Context context;

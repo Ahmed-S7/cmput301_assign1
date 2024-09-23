@@ -2,6 +2,7 @@ package com.example.asshittu_mybookwishlist;
 
 import java.util.ArrayList;
 
+//Class representing the wishlist and all of its operations
 public class UserWishlist {
 
     private ArrayList<Book> books;

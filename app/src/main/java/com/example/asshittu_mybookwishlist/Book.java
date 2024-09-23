@@ -2,13 +2,14 @@ package com.example.asshittu_mybookwishlist;
 
 import androidx.annotation.NonNull;
 
+//Class is responsible for attributes and functionalities pertaining to the book class
 public class Book {
 private String title;
 private String authorName;
 private String genre;
 private String publicationYear;
 private Boolean read;
-//Class is responsible for attributes and functionalities pertaining to the book class
+
 
 Book (@NonNull String title,  @NonNull String authorName,  String genre, @NonNull String publicationYear){
     this.title = title;

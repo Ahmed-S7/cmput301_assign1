@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-
+//Directs the program logic
 public class MainActivity extends AppCompatActivity implements AddOrEditBookDetailsFragment.FragmentButtonsListener {
 
     private ListView bookListView;
@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             new AddOrEditBookDetailsFragment().show(getSupportFragmentManager(), "ADD/EDIT_CITY");
         });
 
+        //sends a bundle with all relevant information about the book in a bundle for use inside of the fragment
+        //all operations follow any clicks on a book item using the OnItemClickListener
+
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View book, int bookPosition, long l) {
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
         });
     }
 
+    //method that is invoked for new book additions
     @Override
     public void onOkPressed(Book newBook, boolean readStatus) {
 
@@ -96,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
     }
 
+    //method that is invoked when a book is edited
     @Override
     public void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus) {
 
@@ -115,12 +120,11 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             numReadBooks = myWishList.getNumReadBooks();
             //updates the textview for the read count
             readCount.setText(String.valueOf(numReadBooks));
-
-
             bookArrayAdapter.notifyDataSetChanged();
 
     }
 
+    //method that is invoked when a book is deleted
     @Override
     public void onDeletePressed(int selectedBook) {
 
