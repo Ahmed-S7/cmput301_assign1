@@ -36,42 +36,49 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:paddingLeft="30dp"
+            android:paddingLeft="20dp"
             android:text="@string/book_count_title"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/book_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="5dp"
             android:paddingRight="50dp"
             android:text="0"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/read_count_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:paddingLeft="50dp"
+            android:paddingLeft="45dp"
             android:text="@string/read_books"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/read_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="5dp"
             android:paddingRight="30dp"
             android:text="0"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -88,6 +95,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:text="Title:"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="17sp" />
 
@@ -96,7 +104,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingLeft="25dp"
-            android:text="Author Name:"
+            android:text="Author:"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="17sp" />
 
@@ -106,6 +115,7 @@
             android:layout_height="match_parent"
             android:paddingLeft="20dp"
             android:text="Genre:"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="17sp" />
 
@@ -117,6 +127,7 @@
             android:paddingLeft="35dp"
             android:paddingRight="7dp"
             android:text="Read:"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="17sp" />
     </LinearLayout>

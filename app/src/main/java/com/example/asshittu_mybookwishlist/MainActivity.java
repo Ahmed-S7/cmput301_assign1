@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
 
     private ListView bookListView;
     private ArrayAdapter<Book> bookArrayAdapter;
+    private User newUser;
     private UserWishlist myWishList;
     private ArrayList<Book> myBooks;
     private TextView bookCount;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
         bookListView = findViewById(R.id.book_list);
         myBooks = new ArrayList<>();
         myWishList = new UserWishlist(myBooks);
+        newUser = new User(myWishList);
         myBooks = myWishList.getBooks();
         bookArrayAdapter = new DisplayList(this, myBooks);
         bookListView.setAdapter(bookArrayAdapter);
@@ -77,9 +79,9 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     public void onOkPressed(Book newBook, boolean readStatus) {
         if (!newBook.getTitle().strip().isEmpty() && !newBook.getAuthorName().strip().isEmpty()) {
             //add the book
-            myWishList.addBook(newBook);
+            newUser.getBookWishList().addBook(newBook);
             //update the book count
-            numBooks = myWishList.getBookCount();
+            numBooks = newUser.getBookWishList().getBookCount();
             //updates the text view for the book count
             bookCount.setText(String.valueOf(numBooks));
             int bookPos = myWishList.getBooks().indexOf(newBook);
