@@ -96,7 +96,7 @@
             android:paddingLeft="20dp"
             android:text="Title:"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="#764B0B"
             android:textSize="17sp" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:paddingLeft="25dp"
             android:text="Author:"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="#764B0B"
             android:textSize="17sp" />
 
         <TextView
@@ -116,7 +116,7 @@
             android:paddingLeft="20dp"
             android:text="Genre:"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="#764B0B"
             android:textSize="17sp" />
 
         <TextView
@@ -128,7 +128,7 @@
             android:paddingRight="7dp"
             android:text="Read:"
             android:textAllCaps="true"
-            android:textColor="@color/black"
+            android:textColor="#764B0B"
             android:textSize="17sp" />
     </LinearLayout>
 
