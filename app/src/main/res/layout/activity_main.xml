@@ -142,7 +142,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="115dp"
         android:background="#75B1AB">
 
     </ListView>

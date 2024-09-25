@@ -76,7 +76,6 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
         genre = view.findViewById(R.id.genre_name_editText);
         publicationYear = view.findViewById(R.id.publication_Year_editText);
         readStatus = view.findViewById(R.id.read_status_checkbox);
-        //to hold an integer version of the publication year
 
 
         //This conditional is invoked whenever the user clicks a book on the listview, because this means that arguments will be sent to the class
@@ -94,8 +93,13 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
             authorName.setText(authorNameForEditing);
 
             genreForBookEditing = getArguments().getString("book_genre");
-            genre.setText(genreForBookEditing);
 
+            //if the book being edited has an unspecified genre, the edit Text will be empty to reflect this
+            if(genreForBookEditing.equals("  N/A  ")){
+                genre.setText("");
+            }else {
+                genre.setText(genreForBookEditing);
+            }
 
             publicationYear.setText(getArguments().getString("publication_year"));
 
@@ -105,6 +109,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
         }
 
+        //Build the alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
                 .setView(view)
@@ -226,8 +231,10 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         } else {
                                     validPubYear = true;
                         }
-
-
+                        //If the user enters no genre, the field will be labelled as "unspecified"
+                        if (genreName.strip().equals("")){
+                            genreName = "  N/A  ";
+                        }
 
                         //ok button press which takes places after all validation is complete
                         if (validTitle && validAuthor && validPubYear) {

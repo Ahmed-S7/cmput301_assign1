@@ -129,8 +129,6 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     public void onDeletePressed(int selectedBook) {
 
         Book bookToRemove = myWishList.getBooks().get(selectedBook);
-
-        if (selectedBook >= 0 && selectedBook < myBooks.size()) {
             Toast confirm = new Toast(this);
             confirm.setText("Book: '" + bookToRemove.getTitle() + "' deleted");
             confirm.setDuration(Toast.LENGTH_SHORT);
@@ -143,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             //updates the read count
             readCount.setText(String.valueOf(myWishList.getNumReadBooks()));
             bookArrayAdapter.notifyDataSetChanged();
-        }
+
 
 
     }
