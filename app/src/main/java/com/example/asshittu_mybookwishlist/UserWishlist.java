@@ -28,7 +28,25 @@ public class UserWishlist {
         return books.get(position);
     }
 
+    public boolean containsBook(Book testBook) {
+      boolean duplicate = false;
 
+        for (int i = 0; i < books.size(); i++) {
+            //syntax adjusted using Copilot: "can you adjust the brackets so that all of this works as one condition", https://www.bing.com/chat?q=giothiu+n&sendquery=1&FORM=SCCODX, 2024-09-25
+            if (testBook.getTitle().equals(books.get(i).getTitle()) &&
+                    testBook.getAuthorName().equals(books.get(i).getAuthorName()) &&
+                    testBook.getGenre().equals(books.get(i).getGenre()) &&
+                    testBook.getPublicationYear().equals(books.get(i).getPublicationYear())) {
+                {
+
+                    duplicate = true;
+                }
+            }
+        }
+        return duplicate;
+
+
+    }
     public int getBookPosition(Book book){
         return this.books.indexOf(book);
     }

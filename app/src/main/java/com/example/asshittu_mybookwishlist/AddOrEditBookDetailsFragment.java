@@ -123,11 +123,10 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         //Condition derived from Copilot search: "my delete button is deleting elements even when the edittexts are empty, how do I prevent that?" - 2024-09-22
                         if (!bookTitle.getText().toString().isEmpty() &&
                                 !authorName.getText().toString().isEmpty() &&
-                                !genre.getText().toString().isEmpty() &&
                                 !publicationYear.getText().toString().isEmpty()) {
                             listener.onDeletePressed(selectedBook);
                         } else {
-                            Toast.makeText(getContext(), "Cannot delete. Fields are empty.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Cannot delete. Required Fields are empty.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 })

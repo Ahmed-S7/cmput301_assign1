@@ -16,7 +16,7 @@
         android:textColorLink="#0D0000"
         android:textSize="15sp"
         android:maxWidth="75dp"
-        android:maxLines="2"
+        android:maxLines="3"
         android:ellipsize="end"
         android:layout_weight="1" />
 
@@ -30,7 +30,7 @@
         android:textColorLink="#070000"
         android:textSize="15sp"
         android:maxWidth="75dp"
-        android:maxLines="2"
+        android:maxLines="3"
         android:ellipsize="end"
         android:layout_weight="1" />
 
@@ -44,7 +44,7 @@
         android:textColorLink="#070000"
         android:textSize="15sp"
         android:maxWidth="95dp"
-        android:maxLines="1"
+        android:maxLines="3"
         android:ellipsize="end"
         android:layout_weight="1" />
 

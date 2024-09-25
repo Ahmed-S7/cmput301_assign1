@@ -78,10 +78,11 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
         });
     }
 
+    //does not allow any duplicates to be added to the wishlist
     //method that is invoked for new book additions
     @Override
     public void onOkPressed(Book newBook, boolean readStatus) {
-
+        if(!(myWishList.containsBook(newBook))) {
             //add the book
             newUser.getBookWishList().addBook(newBook);
             //update the book count
@@ -97,14 +98,22 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             readCount.setText(String.valueOf(numReadBooks));
             //updates the array adapter of the changes in the ArrayList
             bookArrayAdapter.notifyDataSetChanged();
+        }else{
+            Toast confirm = new Toast(this);
+            confirm.setText("Could not add book, this book is already in your wishlist");
+            confirm.setDuration(Toast.LENGTH_SHORT);
+            confirm.show();
+
+        }
 
     }
 
+    //does not allow any duplicates top be added to the wishlist
     //method that is invoked when a book is edited
     @Override
     public void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus) {
 
-
+            if(!(myWishList.containsBook(newBook))) {
             //finds the current book, replaces its info with that of the new book
             Book currentBook = myWishList.getBookAtPosition(selectedBook);
             //Adjusts the fields of the book
@@ -121,7 +130,13 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             //updates the textview for the read count
             readCount.setText(String.valueOf(numReadBooks));
             bookArrayAdapter.notifyDataSetChanged();
+        }else{
+                Toast confirm = new Toast(this);
+                confirm.setText("Could not add book, this book is already in your wishlist");
+                confirm.setDuration(Toast.LENGTH_SHORT);
+                confirm.show();
 
+            }
     }
 
     //method that is invoked when a book is deleted
