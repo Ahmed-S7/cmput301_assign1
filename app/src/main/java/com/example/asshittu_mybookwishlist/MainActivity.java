@@ -113,7 +113,6 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     @Override
     public void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus) {
 
-            if(!(myWishList.containsBook(newBook))) {
             //finds the current book, replaces its info with that of the new book
             Book currentBook = myWishList.getBookAtPosition(selectedBook);
             //Adjusts the fields of the book
@@ -130,13 +129,6 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
             //updates the textview for the read count
             readCount.setText(String.valueOf(numReadBooks));
             bookArrayAdapter.notifyDataSetChanged();
-        }else{
-                Toast confirm = new Toast(this);
-                confirm.setText("Could not add book, this book is already in your wishlist");
-                confirm.setDuration(Toast.LENGTH_SHORT);
-                confirm.show();
-
-            }
     }
 
     //method that is invoked when a book is deleted
