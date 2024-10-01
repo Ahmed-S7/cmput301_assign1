@@ -17,6 +17,7 @@ import java.util.Calendar;
 
 
 public class AddOrEditBookDetailsFragment extends DialogFragment {
+    //or user interaction
     private EditText bookTitle;
     private EditText authorName;
     private EditText genre;
@@ -45,13 +46,13 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     //the bottom two methods include an integer that is used for the index because they are implemented for use upon clicking of the listView
     public interface FragmentButtonsListener {
 
-        //to be implemented for adding new books
+        //for adding new books
         void onOkPressed(Book book,boolean readStatus);
 
-        //to be implemented for the editing or deletion of an already existing book in the wishlist
+        //for the editing or deletion of an already existing book in the wishlist
         void onOkPressed2(Book newBook, Integer selectedBook, boolean readStatus);//additionally adds the index of the selected book so that it can be edited
 
-        //to be implemented for deletions
+        //for deletions
         void onDeletePressed(int selectedBook);
 
     }
@@ -78,7 +79,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
         readStatus = view.findViewById(R.id.read_status_checkbox);
 
 
-        //This conditional is invoked whenever the user clicks a book on the listview, because this means that arguments will be sent to the class
+        //This condition is invoked whenever the user clicks a book on the listview, because this means that arguments will be sent to the class
         if (getArguments() != null) {
             editing = true;
             //sets all of the fields to the passed arguments from the book that was clicked in the wishlist
@@ -109,7 +110,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
 
         }
 
-        //Build the alert dialog
+        //Builds the alert dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
                 .setView(view)
@@ -144,8 +145,8 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
                         readStatusForEditing = readStatus.isChecked();
 
                         //handles the ok press for cases of adding or editing a book
-
-                        //TODO: validate all 4 entries during the next step, **remember to keep read status as false for the newly added entries**
+                        //validates all 4 entries during the next step
+                        //only proper entries are allowed to be entered to the wishlist, otherwise the user is notified that their entry has failed
                         if (title.length() > 50) {
 
                                     Toast titleTooLong = new Toast(getContext());

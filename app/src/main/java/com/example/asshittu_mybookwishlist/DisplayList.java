@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class DisplayList extends ArrayAdapter<Book> {
     private ArrayList<Book> books;
     private Context context;
-
+    //constructor for the the display list
     public DisplayList(Context context, ArrayList<Book> books) {
         super(context, 0, books);
         this.books = books;
@@ -28,6 +28,7 @@ public class DisplayList extends ArrayAdapter<Book> {
 
     @NonNull
     @Override
+    //creates the view for the array adapter
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
 

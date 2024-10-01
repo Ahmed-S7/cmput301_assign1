@@ -10,24 +10,28 @@ public class UserWishlist {
     private int bookCount;
     private int numReadBooks;
 
+    //constructor for the books
     UserWishlist(ArrayList<Book> bookArray){
         this.books = bookArray;
         this.bookCount = books.size();
     }
 
+    //retrieves the wishlist
     public ArrayList<Book> getBooks(){
         return books;
     }
 
+    //sets a new wishlist
     public void setBooks(ArrayList<Book> books){
         this.books = books;
     }
 
-    public Book getBookAtPosition(int position){
 
+    public Book getBookAtPosition(int position){
         return books.get(position);
     }
 
+    //checks if the wishlist contains a specific book
     public boolean containsBook(Book testBook) {
       boolean duplicate = false;
 
@@ -47,19 +51,23 @@ public class UserWishlist {
 
 
     }
+    //retrieve the position of a specific book
     public int getBookPosition(Book book){
         return this.books.indexOf(book);
     }
 
+    //adds a book to the wishlist
     public void addBook(Book book){
         books.add(book);
         bookCount = bookCount + 1;
     }
+    //gets the number of books inside of the wishlist
     public int getBookCount(){
         bookCount = books.size();
         return bookCount;
     }
 
+    //retrieves the number of read books in the wishlist
     public int getNumReadBooks(){
         numReadBooks = 0;
         for (int i = 0; i < books.size(); i++){
@@ -69,9 +77,12 @@ public class UserWishlist {
         }
         return numReadBooks;
     }
-
+    //removes books from the wishlist
     public void removeBook(Book book){
         books.remove(book);
+        if(bookCount > 0 ){
+            bookCount -= 1;
+        }
     }
 
 

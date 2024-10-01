@@ -6,6 +6,8 @@ public class User {
     User(UserWishlist wishlist){
         this.bookWishList = wishlist;
     }
+
+    //returns the user's wishlist
     public UserWishlist getBookWishList() {
         return bookWishList;
     }

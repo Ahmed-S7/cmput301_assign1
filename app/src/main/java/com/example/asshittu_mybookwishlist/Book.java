@@ -10,7 +10,7 @@ private String genre;
 private String publicationYear;
 private Boolean read;
 
-
+//constructor for the book class
 Book (@NonNull String title,  @NonNull String authorName,  String genre, @NonNull String publicationYear){
     this.title = title;
     this.authorName = authorName;
