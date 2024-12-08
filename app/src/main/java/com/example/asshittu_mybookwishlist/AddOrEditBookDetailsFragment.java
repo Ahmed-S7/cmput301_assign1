@@ -72,7 +72,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //Inflate the layout for this fragment
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.book_details, null);
-        bookTitle = view.findViewById(R.id.book_title_editText);
+        bookTitle = view.findViewById(R.id.item_title_editText);
         authorName = view.findViewById(R.id.author_name_editText);
         genre = view.findViewById(R.id.genre_name_editText);
         publicationYear = view.findViewById(R.id.publication_Year_editText);
@@ -114,7 +114,7 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         return builder
                 .setView(view)
-                .setTitle("ADD/EDIT/DELETE BOOK")
+                .setTitle("ADD/EDIT/DELETE ITEM")
                 .setNegativeButton("Cancel", null)
                 .setNeutralButton("DELETE", new DialogInterface.OnClickListener(){
 

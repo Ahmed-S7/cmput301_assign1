@@ -35,14 +35,14 @@ public class DisplayList extends ArrayAdapter<Book> {
         View view = convertView;
 
         if (view == null) {
-            //Content.xml spacing was adjusted using copilot:"how do I make all of these text fields evenly spaced?" https://www.bing.com/chat?q=github&sendquery=1&FORM=SCCODX - 2024-22-09
+
             view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 
         Book book = books.get(position);
 
-        TextView bookTitle = view.findViewById(R.id.book_title);
-        TextView authorName = view.findViewById(R.id.author_name);
+        TextView bookTitle = view.findViewById(R.id.item_title);
+        TextView authorName = view.findViewById(R.id.creator_name);
         TextView genre = view.findViewById(R.id.genre);
         CheckBox readStatus = view.findViewById(R.id.read_status);
 

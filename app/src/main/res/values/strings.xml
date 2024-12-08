@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">asshittu-MyBookWishlist</string>
-    <string name="read">Read</string>
-    <string name="publication_year_hint">Enter the Book\'s Publication Year</string>
-    <string name="book_genre_hint">Enter the Book Genre</string>
-    <string name="author_name_hint">Enter the Author\'s Name</string>
-    <string name="book_title_hint">Enter Book Title</string>
-    <string name="book_genre">Book Genre</string>
-    <string name="unread_status">unread</string>
+    <string name="app_name">My Media Tracker</string>
+    <string name="read">Completed</string>
+    <string name="publication_year_hint">Enter the Item\'s Publication Year</string>
+    <string name="book_genre_hint">Enter the Item\'s Genre</string>
+    <string name="author_name_hint">Enter the Item\'s Name</string>
+    <string name="item_title_hint">Enter Item Title</string>
+    <string name="book_genre">Item Genre</string>
+    <string name="unread_status">incomplete</string>
     <string name="readStatus">Books Read:</string>
-    <string name="read_books">Read Books:</string>
-    <string name="book_count_title">Book Count:</string>
+    <string name="read_books">Completed Items:</string>
+    <string name="book_count_title">Item Count:</string>
 </resources>

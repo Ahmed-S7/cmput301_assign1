@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:paddingLeft="20dp"
-            android:text="@string/book_count_title"
+            android:text="Item Count:"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
             android:paddingLeft="45dp"
-            android:text="@string/read_books"
+            android:text="Completed:"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -81,59 +81,6 @@
             android:textStyle="bold" />
 
 
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="89dp">
-
-        <TextView
-            android:id="@+id/book_title_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="30dp"
-            android:text="Title:"
-            android:textAllCaps="true"
-            android:textColor="#0B0B0A"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/author_name_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="40dp"
-            android:text="Author:"
-            android:textAllCaps="true"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/genre_name_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="40dp"
-            android:text="Genre:"
-            android:textAllCaps="true"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <TextView
-
-            android:id="@+id/read_status_heading"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="sans-serif-smallcaps"
-            android:paddingLeft="40dp"
-
-            android:text="Read:"
-            android:textAllCaps="true"
-            android:textColor="#000000"
-            android:textSize="17sp" />
     </LinearLayout>
 
 
