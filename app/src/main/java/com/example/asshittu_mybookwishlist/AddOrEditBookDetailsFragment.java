@@ -115,7 +115,6 @@ public class AddOrEditBookDetailsFragment extends DialogFragment {
         return builder
                 .setView(view)
                 .setTitle("ADD/EDIT/DELETE BOOK")
-                //TODO: .setNeutralButton() - make this the delete button later
                 .setNegativeButton("Cancel", null)
                 .setNeutralButton("DELETE", new DialogInterface.OnClickListener(){
 
