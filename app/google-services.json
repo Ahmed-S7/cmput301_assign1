@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "725146866089",
+    "project_id": "booklistapp-10846",
+    "storage_bucket": "booklistapp-10846.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:725146866089:android:a2612a4edd8db9c72b74b8",
+        "android_client_info": {
+          "package_name": "com.example.asshittu_mybookwishlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoJDpmlU7NQ2F1PESuJPtkfUs7fIolZ7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

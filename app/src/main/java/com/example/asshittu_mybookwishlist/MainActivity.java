@@ -7,10 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.Firebase;
 
 import java.util.ArrayList;
 //Directs the program logic
@@ -27,13 +27,14 @@ public class MainActivity extends AppCompatActivity implements AddOrEditBookDeta
     private int numBooks;
     private int numReadBooks;
 
+    private Firebase db;
 
     //Holds all of the operations for the initial creation of the the app on startup
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
         bookListView = findViewById(R.id.book_list);
         myBooks = new ArrayList<>();
         myWishList = new UserWishlist(myBooks);
